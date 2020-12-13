@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ObstacleSpawner : MonoBehaviour
@@ -16,7 +15,6 @@ public class ObstacleSpawner : MonoBehaviour
             instance = this;
         }
     }
-
     private void Start()
     {
         StartCoroutine(nameof(Spawn));
