@@ -15,14 +15,14 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
-    void Update()
+    private void Update()
     {
         if (Input.GetMouseButtonDown(0) && grounded && !gameOver)
         {
             Jump();
         }
     }
-    void Jump()
+    private void Jump()
     {
         grounded = false;
         rb.velocity = Vector2.up * jumpForce;
@@ -31,14 +31,14 @@ public class PlayerController : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Ground")
+        if(collision.gameObject.CompareTag("Ground"))
         {
             grounded = true;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Obstacle")
+        if(collision.gameObject.CompareTag("Obstacle"))
         {
             Destroy(collision.gameObject);
             GameManager.instance.GameOver();

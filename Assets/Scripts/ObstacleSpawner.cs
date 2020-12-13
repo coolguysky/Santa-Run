@@ -17,11 +17,11 @@ public class ObstacleSpawner : MonoBehaviour
         }
     }
 
-    void Start()
+    private void Start()
     {
-        StartCoroutine("Spawn");
+        StartCoroutine(nameof(Spawn));
     }
-    IEnumerator Spawn()
+    private IEnumerator Spawn()
     {
         float waitTime = 1f;
         yield return new WaitForSeconds(waitTime);
@@ -32,7 +32,6 @@ public class ObstacleSpawner : MonoBehaviour
             waitTime = Random.Range(minSpawnTime,maxSpawnTime);
             yield return new WaitForSeconds(waitTime);
         }
-        
     }
     void SpawnObstacle()
     {

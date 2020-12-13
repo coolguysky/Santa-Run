@@ -26,17 +26,15 @@ public class GameManager : MonoBehaviour
         StopScrolling();
         FreezeObjects();
         gameOverPanel.SetActive(true);
-
-
     }
-    void StopScrolling()
+    private void StopScrolling()
     {
         foreach (TextureScroll script in scrolls)
         {
             script.scroll = false;
         }
     }
-    void FreezeObjects() //works but not sure if I like it
+    private void FreezeObjects() //works but not sure if I like it
     {
         ObstacleSpawner obj = FindObjectOfType<ObstacleSpawner>();
         Obstacle[] objs = obj.GetComponentsInChildren<Obstacle>();

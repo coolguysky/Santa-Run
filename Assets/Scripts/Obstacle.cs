@@ -11,7 +11,7 @@ public class Obstacle : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-    void Update()
+    private void Update()
     {
         if(transform.position.x < -15f)
         {
