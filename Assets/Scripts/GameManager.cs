@@ -20,16 +20,6 @@ public class GameManager : MonoBehaviour
         }
         scrolls = FindObjectsOfType<TextureScroll>();
     }
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
     public void GameOver()
     {
         ObstacleSpawner.instance.gameOver = true;
@@ -39,7 +29,6 @@ public class GameManager : MonoBehaviour
 
 
     }
-
     void StopScrolling()
     {
         foreach (TextureScroll script in scrolls)
@@ -47,7 +36,6 @@ public class GameManager : MonoBehaviour
             script.scroll = false;
         }
     }
-
     void FreezeObjects() //works but not sure if I like it
     {
         ObstacleSpawner obj = FindObjectOfType<ObstacleSpawner>();
@@ -58,17 +46,14 @@ public class GameManager : MonoBehaviour
             os.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         }
     }
-
     public void Restart()
     {
         SceneManager.LoadScene("Game");
     }
-
     public void Menu()
     {
         SceneManager.LoadScene("Menu");
     }
-
     public void  IncrementScore()
     {
         score++;

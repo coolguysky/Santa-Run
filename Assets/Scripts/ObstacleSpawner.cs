@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ObstacleSpawner : MonoBehaviour
 {
-    //public GameObject obstacle;
     public GameObject[] obstacles;
     public bool gameOver = false;
     public float minSpawnTime, maxSpawnTime;
@@ -22,7 +21,6 @@ public class ObstacleSpawner : MonoBehaviour
     {
         StartCoroutine("Spawn");
     }
-
     IEnumerator Spawn()
     {
         float waitTime = 1f;
@@ -36,7 +34,6 @@ public class ObstacleSpawner : MonoBehaviour
         }
         
     }
-   
     void SpawnObstacle()
     {
         int rand = Random.Range(0, 5);

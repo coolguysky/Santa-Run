@@ -12,19 +12,12 @@ public class TextureScroll : MonoBehaviour
     {
         backgroundMaterial = GetComponent<Renderer>().material;
     }
-
-    void Update()
-    {
-        
-    }
-
     private void FixedUpdate()
     {
         if (scroll)
         {
-            Vector2 offset = new Vector2(scrollSpeed * Time.time, 0); // will speed up over time
+            Vector2 offset = new Vector2(scrollSpeed * Time.time, 0);
             backgroundMaterial.mainTextureOffset = offset;
         }
-        
     }
 }
